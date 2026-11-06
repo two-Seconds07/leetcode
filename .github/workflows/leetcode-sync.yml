@@ -2,8 +2,9 @@ name: Sync LeetCode Submissions
 
 on:
   schedule:
-    - cron: '0 8 * * *'
-  workflow_dispatch:
+    # 每小时的第 0 分钟触发（即每小时整点）
+    - cron: '0 * * * *'
+  workflow_dispatch: # 保留手动触发
 
 permissions:
   contents: write
