@@ -2,11 +2,9 @@ name: Sync LeetCode Submissions
 
 on:
   schedule:
-    # 每天北京时间 16:00 (UTC 8:00) 自动同步
     - cron: '0 8 * * *'
-  workflow_dispatch:  # 支持手动触发
+  workflow_dispatch:
 
-# 授予 GITHUB_TOKEN 写入权限
 permissions:
   contents: write
 
@@ -16,6 +14,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # 👇 关键修改1：拉取代码时，就使用你生成的 PAT 身份
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -40,5 +41,6 @@ jobs:
             echo "没有新的变更"
           else
             git commit -m "Sync LeetCode submissions"
-            git push
+            # 👇 关键修改2：确保 push 时使用带 token 的远程地址（其实上面 with 里配置了就够了，但这更稳妥）
+            git push origin main
           fi
