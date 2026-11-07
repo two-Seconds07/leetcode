@@ -1,7 +1,7 @@
 // 题目: 合并两个有序数组
 // 题号: 88
 // 语言: java
-// 提交时间: 2026-11-02 00:25:22
+// 提交时间: 2026-11-07 00:35:55
 
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
@@ -14,16 +14,18 @@ class Solution {
 
         //添加好之后 对数组1进行排序 按照升序 使用冒泡排序的方法
         
-        for(int i = 0 ; i < nums1.length - 1 ; i++){
+        // for(int i = 0 ; i < nums1.length - 1 ; i++){
 
-            for(int j =0  ; j < nums1.length -1 - i  ; j++){
-                if(nums1[j] > nums1[j + 1]){
-                    int temp = nums1[j];
-                    nums1[j] = nums1[j + 1];
-                    nums1[j + 1] = temp;
-                }
-            }
-        }
+        //     for(int j =0  ; j < nums1.length -1 - i  ; j++){
+        //         if(nums1[j] > nums1[j + 1]){
+        //             int temp = nums1[j];
+        //             nums1[j] = nums1[j + 1];
+        //             nums1[j + 1] = temp;
+        //         }
+        //     }
+        // }
+
+        Arrays.sort(nums1);
 
     }
 }
