@@ -165,6 +165,7 @@ def main():
             f"// 题目: {problem_title}\n"
             f"// 题号: {question_id}\n"
             f"// 语言: {lang}\n"
+            f"// 作者: two-Seconds07\n"
             f"// 提交时间: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(int(sub['timestamp'])))}\n\n"
         )
 
