@@ -1,7 +1,6 @@
 name: Sync LeetCode Submissions
 
 on:
-  schedule:
   workflow_dispatch: # 保留手动触发
 
 permissions:
